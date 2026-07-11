@@ -288,9 +288,17 @@ img{ max-width: 100%; display:block; }
   border-radius: var(--radius);
   padding: 24px;
   position: relative;
-  transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease, opacity .3s ease, filter .3s ease;
 }
+/* Spotlight: hovering the grid dims every card... */
+.about-cards:hover .card{
+  opacity: 0.5;
+  filter: blur(1px) saturate(0.7);
+}
+/* ...then the one actually hovered pops back into focus */
 .card:hover{
+  opacity: 1;
+  filter: none;
   border-color: var(--pink);
   transform: scale(1.08);
   z-index: 5;
