@@ -295,17 +295,17 @@ img{ max-width: 100%; display:block; }
   opacity: 0.5;
   filter: blur(1px) saturate(0.7);
 }
-/* ...then the one actually hovered pops back into focus */
-.card:hover{
+/* ...then the one actually hovered pops back into focus (same specificity, but this comes later so it wins) */
+.about-cards .card:hover{
   opacity: 1;
   filter: none;
   border-color: var(--pink);
-  transform: scale(1.08);
+  transform: translateY(-6px);
   z-index: 5;
   box-shadow:
     0 0 0 1px rgba(255,46,99,0.5),
-    0 15px 40px rgba(0,0,0,0.5),
-    0 0 45px rgba(255,46,99,0.4);
+    0 0 30px rgba(255,46,99,0.45),
+    0 0 60px rgba(255,68,56,0.25);
 }
 .card h3{
   font-family: var(--font-display);
